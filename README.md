@@ -112,7 +112,7 @@ npm start
 
 ## ✅ ধাপ ৫: এখন NGINX কনফিগার করি
 
-### 📁 `/etc/nginx/sites-enabled/` ফোল্ডারে যান (VS Code দিয়ে)
+### 📁 `/etc/nginx/sites-available/` ফোল্ডারে যান (VS Code দিয়ে)
 
 ---
 
@@ -148,6 +148,14 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
+```
+
+টার্মিনালে রান করুন:
+
+```bash
+sudo ln -s /etc/nginx/sites-available/root /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/api /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/dashboard /etc/nginx/sites-enabled/
 ```
 
 ---
